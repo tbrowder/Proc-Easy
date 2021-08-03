@@ -1,0 +1,6 @@
+use Test;
+use Proc::Easy;
+
+pass "replace me";
+
+done-testing;
