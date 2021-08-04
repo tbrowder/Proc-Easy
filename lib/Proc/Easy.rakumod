@@ -9,9 +9,9 @@ sub run-command(Str:D $cmd,
                 :$err,
 		:$out,
 		:$all,
-		Bool :$debug = False,
 		:$dir,                # run command in dir 'dir'
                 Hash() :$env = %*ENV,
+		:$debug,
 	       ) is export {
     # default is to return the exit code which should be zero (false) for a successful command execuiton
     # :dir runs the command in 'dir'

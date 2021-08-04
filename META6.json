@@ -18,6 +18,7 @@
   ],
   "source-url": "https://github.com/tbrowder/Proc-Easy.git",
   "tags": [
+    "proc run"
   ],
   "test-depends": [
     "File::Temp"
