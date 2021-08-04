@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/tbrowder/Proc-Easy/workflows/test/badge.svg)](https://github.com/tbrowder/Proc-Easy/actions)
+
 NAME
 ====
 
