@@ -8,8 +8,7 @@ sub run-command(Str:D $cmd,
                 :$err,
 		:$out,
 		:$all,
-		:$dir,                # run command in dir 'dir'
-                Hash() :$env = %*ENV,
+		:$dir, # run command in dir 'dir'
 		:$debug,
 	       ) is export {
     # default is to return the exit code which should be zero (false) for a successful command execuiton
