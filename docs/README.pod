@@ -4,7 +4,12 @@
 
 B<Proc::Easy> - Provides routine C<run-command> to ease using Raku's B<Proc> class.
 
-NOTE: This module replaces the C<run-command> portion of the deprecated module C<Proc::More>.
+NOTE: This module replaces the C<run-command> portion of the
+deprecated module C<Proc::More>. Note also the API has changed
+slightly: the previous C<:$all> option was removed and its behavior
+is now the default (i.e., all three of the output parameter values are
+returned as a list of three elements unless only one is selected as an
+option).
 
 =head1 SYNOPSIS
 

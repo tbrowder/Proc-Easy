@@ -5,7 +5,7 @@ NAME
 
 **Proc::Easy** - Provides routine `run-command` to ease using Raku's **Proc** class.
 
-NOTE: This module replaces the `run-command` portion of the deprecated module `Proc::More`.
+NOTE: This module replaces the `run-command` portion of the deprecated module `Proc::More`. Note also the API has changed slightly: the previous `:$all` option was removed and its behavior is now the default (i.e., all three of the output parameter values are returned as a list of three elements unless only one is selected as an option).
 
 SYNOPSIS
 ========
