@@ -5,6 +5,8 @@ NAME
 
 **Proc::Easy** - Provides routine `run-command` to ease using Raku's **Proc** class.
 
+NOTE: This module replaces the `run-command` portion of the deprecated module `Proc::More`.
+
 SYNOPSIS
 ========
 
@@ -18,7 +20,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-**Proc::Easy** is designed to make using the `Proc` class' `run` routine easier for the usual, simple case when the myriad ways to use `Proc` are not required.
+**Proc::Easy** is designed to make using the `run` routine from class `Proc` easier for the usual, simple case when the myriad ways to use `Proc`'s `run` are not required.
 
 sub `run-command`
 -----------------
@@ -35,7 +37,7 @@ sub run-command(Str:D $cmd,
 
 ### Parameters:
 
-  * `$cmd` A string that contains a command suitable for using Raku's `run` routine
+  * `$cmd` - A string that contains a command suitable for using Raku's `run` routine
 
   * `:$exit` - returns the exit code which should be zero (false) for a successful command execution
 
@@ -47,7 +49,7 @@ sub run-command(Str:D $cmd,
 
   * `:$debug` - prints extra info to stdout AFTER the proc command
 
-### Returns
+### Returns:
 
 A three-element list of exit code and results from stderr and stdout, respectively. Either of the three may be selected individually if desired. (If more than one is selected, only one is returned in the order of exit code, stderr, or stdout.) There is also the capability to send debug messages to stdout by including the `:$debug` option.
 
