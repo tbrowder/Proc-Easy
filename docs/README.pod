@@ -36,23 +36,20 @@ sub run-command(Str:D $cmd,
 
 =head3 Parameters:
 
-=item C<$cmd> -
-A string that contains a command suitable for using Raku's C<run> routine
-
-=item C<:$exit> - returns the exit code  which should be zero (false) for a successful command execution
-=item C<:$err> - returns C<stderr>
-=item C<:$out> - returns C<stdout>
-=item C<:$dir> - runs the command in directory 'dir'
-=item C<:$debug> - prints extra info to stdout AFTER the proc command
+=item C<$cmd>    - A string that contains a command suitable for using Raku's C<run> routine
+=item C<:$exit>  - Returns the exit code  which should be zero (false) for a successful command execution
+=item C<:$err>   - Returns C<stderr>
+=item C<:$out>   - Returns C<stdout>
+=item C<:$dir>   - Runs the command in directory 'dir'
+=item C<:$debug> - Prints extra info to stdout AFTER the C<proc> command
 
 =head3 Returns:
 
-A three-element list of exit code and results from stderr
-and stdout, respectively. Either of the three may be selected individually if
+A three-element list of the exit code and results from C<stderr>
+and C<stdout>, respectively. Either of the three may be selected individually if
 desired. (If more than one is selected, only one is returned in the
-order of exit code, stderr, or stdout.) There is also the capability
-to send debug messages to stdout by including the C<:$debug> option.
-
+order of exit code, C<stderr>, or C<stdout>.) There is also the capability
+to send debug messages to C<stdout> by including the C<:$debug> option.
 
 =head1 AUTHOR
 
