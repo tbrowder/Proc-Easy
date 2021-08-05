@@ -1,9 +1,18 @@
-unit class Proc::Easy:ver<0.0.1>:auth<cpan:TBROWDER>;
+unit class Proc::Easy:ver<0.0.1>:auth<cpan:TBROWDER>:api<2>;
 
 #| Subroutine: run-command
 #| Purpose : Run a system command using class Proc.
-#| Params  : A string that contains a command suitable using Raku's run routine, and four named parameters that describe inputs and desired outputs.
-#| Returns : A three-element list of exit code and results from stderr and stderr. Either of the three may be selected individually if desired. (If more than one is selected, only one is returned in the order of exit code, stderr, or stdout.) There is also the capability to send debug messages to stdout.
+
+#| Params : A string that contains a command suitable using Raku's run
+#| routine, and four named parameters that describe inputs and desired
+#| outputs.
+
+#| Returns : A three-element list of exit code and results from stderr
+#| and stdout, respectively. Either of the three may be selected
+#| individually if desired. (If more than one is selected, only one is
+#| returned in the order of exit code, stderr, or stdout.) There is
+#| also the capability to send debug messages to stdout.
+
 sub run-command(Str:D $cmd,
                 :$err,
 		:$out,
