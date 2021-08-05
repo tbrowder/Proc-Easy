@@ -39,19 +39,19 @@ sub run-command(Str:D $cmd,
 
   * `$cmd` - A string that contains a command suitable for using Raku's `run` routine
 
-  * `:$exit` - returns the exit code which should be zero (false) for a successful command execution
+  * `:$exit` - Returns the exit code which should be zero (false) for a successful command execution
 
-  * `:$err` - returns `stderr`
+  * `:$err` - Returns `stderr`
 
-  * `:$out` - returns `stdout`
+  * `:$out` - Returns `stdout`
 
-  * `:$dir` - runs the command in directory 'dir'
+  * `:$dir` - Runs the command in directory 'dir'
 
-  * `:$debug` - prints extra info to stdout AFTER the proc command
+  * `:$debug` - Prints extra info to stdout AFTER the `proc` command
 
 ### Returns:
 
-A three-element list of exit code and results from stderr and stdout, respectively. Either of the three may be selected individually if desired. (If more than one is selected, only one is returned in the order of exit code, stderr, or stdout.) There is also the capability to send debug messages to stdout by including the `:$debug` option.
+A three-element list of the exit code and results from `stderr` and `stdout`, respectively. Either of the three may be selected individually if desired. (If more than one is selected, only one is returned in the order of exit code, `stderr`, or `stdout`.) There is also the capability to send debug messages to `stdout` by including the `:$debug` option.
 
 AUTHOR
 ======
