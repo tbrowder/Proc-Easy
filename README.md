@@ -3,29 +3,63 @@
 NAME
 ====
 
-Proc::Easy - blah blah blah
+**Proc::Easy** - Provides routine `run-command` to ease using Raku's **Proc** class.
 
 SYNOPSIS
 ========
 
 ```raku
-use Proc::Easy;
+    use Proc::Easy;
+    my $cmd = "some-user-prog arg1 arg2";
+    my $other-dir = $*TMPDIR";
+    my ($exitcode, $stderr, $stdout) = run-command $cmd, :dir($other-dir);
 ```
 
 DESCRIPTION
 ===========
 
-Proc::Easy is ...
+**Proc::Easy** is designed to make using the `Proc` class' `run` routine easier for the usual, simple case when the myriad ways to use `Proc` are not required.
+
+sub `run-command`
+-----------------
+
+```raku
+sub run-command(Str:D $cmd,
+		:$exit,
+                :$err,
+		:$out,
+		:$dir, # run command in dir 'dir'
+		:$debug,
+	       ) is export {...}
+```
+
+### Parameters:
+
+  * `$cmd` A string that contains a command suitable for using Raku's `run` routine
+
+  * `:$exit` - returns the exit code which should be zero (false) for a successful command execution
+
+  * `:$err` - returns `stderr`
+
+  * `:$out` - returns `stdout`
+
+  * `:$dir` - runs the command in directory 'dir'
+
+  * `:$debug` - prints extra info to stdout AFTER the proc command
+
+### Returns
+
+A three-element list of exit code and results from stderr and stdout, respectively. Either of the three may be selected individually if desired. (If more than one is selected, only one is returned in the order of exit code, stderr, or stdout.) There is also the capability to send debug messages to stdout by including the `:$debug` option.
 
 AUTHOR
 ======
 
 Tom Browder <tbrowder@cpan.org>
 
-COPYRIGHT AND LICENSE
+COPYRIGHT and LICENSE
 =====================
 
-Copyright 2021 Tom Browder
+Copyright © 2017-2021 Tom Browder
 
-This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+This library is free software; you may redistribute or modify it under the Artistic License 2.0.
 
