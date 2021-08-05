@@ -21,7 +21,7 @@ B<Proc::Easy> is designed to make using the C<run> routine from class
 C<Proc> easier for the usual, simple case when the myriad ways to use
 C<Proc>'s C<run> are not required.
 
-=head2 sub C<run-command>
+=head2 sub run-command
 
 =begin code :lang<raku>
 

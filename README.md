@@ -22,8 +22,8 @@ DESCRIPTION
 
 **Proc::Easy** is designed to make using the `run` routine from class `Proc` easier for the usual, simple case when the myriad ways to use `Proc`'s `run` are not required.
 
-sub `run-command`
------------------
+sub run-command
+---------------
 
 ```raku
 sub run-command(Str:D $cmd,
