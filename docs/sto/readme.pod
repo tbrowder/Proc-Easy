@@ -1,0 +1,36 @@
+=begin pod
+
+
+=head1 NAME
+
+B<Proc::Easy> - Provides routine C<run-command> to ease using Raku's B<Proc> class.  
+
+=SYNOPSIS
+
+=begin code
+    use Proc::Easy;
+    my $cmd = "some-user-prog arg1 arg2";
+    my $other-dir = $*TMPDIR";
+    my ($exitcode, $stderr, $stdout) = run-command $cmd, :dir($other-dir), :all;
+=end code
+
+=head1 DESCRIPTION
+
+The routine is described in detail in
+[ALL-SUBS](https://github.com/tbrowder/Proc-Easy/blob/master/docs/ALL-SUBS.md)
+which shows a short description of the exported routine along with
+its complete signature.
+
+=head1 Contributing
+
+Interested users are encouraged to contribute improvements and
+corrections to this module, and pull requests, bug reports, and
+suggestions are always welcome.
+
+=head1 COPYRIGHT and LICENSE
+
+Copyright © 2017-2021 Tom Browder (tbrowder@cpan.org)
+
+This library is free software; you may redistribute or modify it under the Artistic License 2.0.
+
+=end pod
