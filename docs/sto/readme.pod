@@ -1,13 +1,12 @@
 =begin pod
 
-
 =head1 NAME
 
 B<Proc::Easy> - Provides routine C<run-command> to ease using Raku's B<Proc> class.  
 
 =SYNOPSIS
 
-=begin code
+=begin code :lang<Raku>
     use Proc::Easy;
     my $cmd = "some-user-prog arg1 arg2";
     my $other-dir = $*TMPDIR";

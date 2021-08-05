@@ -2,28 +2,64 @@
 
 =head1 NAME
 
-Proc::Easy - blah blah blah
+B<Proc::Easy> - Provides routine C<run-command> to ease using Raku's B<Proc> class.
 
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
-
-use Proc::Easy;
-
+    use Proc::Easy;
+    my $cmd = "some-user-prog arg1 arg2";
+    my $other-dir = $*TMPDIR";
+    my ($exitcode, $stderr, $stdout) = run-command $cmd, :dir($other-dir);
 =end code
 
 =head1 DESCRIPTION
 
-Proc::Easy is ...
+B<Proc::Easy> is designed to make using the C<Proc> class' C<run>
+routine easier for the usual, simple case when the myriad ways to use C<Proc>
+are not required.
+
+=head2 sub C<run-command>
+
+=begin code :lang<raku>
+
+sub run-command(Str:D $cmd,
+		:$exit,
+                :$err,
+		:$out,
+		:$dir, # run command in dir 'dir'
+		:$debug,
+	       ) is export {...}
+=end code
+
+=head3 Parameters:
+
+=item C<$cmd>
+A string that contains a command suitable for using Raku's C<run> routine
+
+=item C<:$exit> - returns the exit code  which should be zero (false) for a successful command execution
+=item C<:$err> - returns C<stderr>
+=item C<:$out> - returns C<stdout>
+=item C<:$dir> - runs the command in directory 'dir'
+=item C<:$debug> - prints extra info to stdout AFTER the proc command
+
+=head3 Returns
+
+A three-element list of exit code and results from stderr
+and stdout, respectively. Either of the three may be selected individually if
+desired. (If more than one is selected, only one is returned in the
+order of exit code, stderr, or stdout.) There is also the capability
+to send debug messages to stdout by including the C<:$debug> option.
+
 
 =head1 AUTHOR
 
 Tom Browder <tbrowder@cpan.org>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT and LICENSE
 
-Copyright 2021 Tom Browder
+Copyright © 2017-2021 Tom Browder
 
-This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+This library is free software; you may redistribute or modify it under the Artistic License 2.0.
 
 =end pod
