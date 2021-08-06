@@ -39,7 +39,7 @@ my ($prog-file, $fh) = tempfile;
 $fh.print: $prog;
 $fh.close;
 
-my $cmd = "perl6 $prog-file";
+my $cmd = "raku $prog-file";
 
 # run tests in the local dir
 # tests 16-18
