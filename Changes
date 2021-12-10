@@ -1,6 +1,7 @@
 Revision history for Proc-Easy
 
 {{$NEXT}}
+    - Publish to Zef repository
     - Change 'perl6' to 'raku'
 
 0.0.1  2021-08-05T08:14:03-05:00

@@ -1,4 +1,4 @@
-unit class Proc::Easy:ver<0.0.1>:auth<cpan:TBROWDER>:api<2>;
+unit class Proc::Easy;
 
 #| Subroutine: run-command
 #| Purpose : Run a system command using class Proc.
